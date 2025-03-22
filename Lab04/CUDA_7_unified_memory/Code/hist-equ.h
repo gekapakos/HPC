@@ -1,0 +1,27 @@
+#ifndef HIST_EQU_COLOR_H
+#define HIST_EQU_COLOR_H
+
+typedef struct{
+    int w;
+    int h;
+    unsigned char * img;
+} PGM_IMG;    
+
+
+
+PGM_IMG read_pgm(const char * path);
+void write_pgm(PGM_IMG img, const char * path);
+void free_pgm(PGM_IMG img);
+void free_gpu_pgm(PGM_IMG img);
+
+void histogram(int * hist_out, unsigned char * img_in, int img_size, int nbr_bin);
+void histogram_equalization(unsigned char * img_out, unsigned char * img_in, int * hist_in, int img_size, int nbr_bin);
+int histogram_equalization_prep(unsigned char * img_out, unsigned char * img_in, int * hist_in, int imageW, int imageH, int nbr_bin, unsigned char * d_ImgIn);
+__global__ void histogramGPU(int * hist_out, unsigned char * img_in, int imageW, int imageH);
+__global__ void histogram_equalization_GPU(unsigned char * img_out, unsigned char * img_in, int * lut, int imageW, int imageH);
+
+//Contrast enhancement for gray-scale images
+PGM_IMG contrast_enhancement_g(PGM_IMG img_in);
+PGM_IMG contrast_enhancement_GPU(PGM_IMG img_in);
+
+#endif
