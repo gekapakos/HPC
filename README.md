@@ -40,11 +40,11 @@ This repository contains the code and documentation for five laboratory exercise
 
 ## Repository Structure
 
-- `exercise1/`: Sequential optimization code and report.
-- `exercise2/`: OpenMP parallelized k-means code and evaluation.
-- `exercise3/`: CUDA convolution code and experimental results.
-- `exercise4/`: GPU histogram equalization code.
-- `exercise5/`: N-Body simulation code for CPU (OpenMP) and GPU (CUDA).
+- `Lab01/`: Sequential optimization code and report.
+- `Lab02/`: OpenMP parallelized k-means code and evaluation.
+- `Lab03/`: CUDA convolution code and experimental results.
+- `Lab04/`: GPU histogram equalization code.
+- `Lab05/`: N-Body simulation code for CPU (OpenMP) and GPU (CUDA).
 
 ## Compilation Instructions
 
